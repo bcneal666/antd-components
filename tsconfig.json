@@ -1,12 +1,24 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "hooks/*": ["src/hooks/*"],
+      "data/*": ["src/data/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "type/*": ["src/type/*"],
+      "model/*": ["src/model/*"],
+      "styles/*": ["src/styles/*"],
+      "router/*": ["src/router/*"],
+      "pages/*": ["src/pages/*"],
+      "services/*": ["src/services/*"],
+      "store/*": ["src/store/*"],
+      "utils/*": ["src/utils/*"]
+    },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "checkJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -18,9 +30,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
