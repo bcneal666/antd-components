@@ -1,4 +1,4 @@
-import { Button, ConfigProvider } from 'antd';
+import { Button, ConfigProvider,Space } from 'antd';
 import { FC, ReactNode } from 'react';
 interface ICusButtonProps {
   text?: string;
@@ -76,22 +76,24 @@ export const CusButton: FC<ICusButtonProps> = ({
         },
       }}
     >
-      <Button
-        autoInsertSpace
-        size={size}
-        block={isBlock}
-        icon={icon}
-        iconPosition={iconPosition}
-        shape={shape}
-        type={type}
-        danger={isDanger}
-        htmlType={htmlType}
-        loading={loading}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        {text}
-      </Button>
+      <Space>
+        <Button
+          autoInsertSpace
+          size={size}
+          block={isBlock}
+          icon={icon}
+          iconPosition={iconPosition}
+          shape={shape}
+          type={type}
+          danger={isDanger}
+          htmlType={htmlType}
+          loading={loading}
+          disabled={disabled}
+          onClick={onClick}
+        >
+          {text}
+        </Button>
+      </Space>
     </ConfigProvider>
   );
 };
