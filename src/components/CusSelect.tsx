@@ -3,7 +3,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { css } from '@emotion/react';
 import { ConfigProvider, Flex, Select } from 'antd';
 import { ReactComponent as IconArrow } from 'assets/arrow-select.svg';
-import { ReactComponent as IconCheck } from 'assets/check.svg';
+// import { ReactComponent as IconCheck } from 'assets/check.svg';
 import { memo, useState } from 'react';
 
 export type SelectOptionType = {
@@ -20,11 +20,9 @@ interface CusSelectProps {
   onOpen?: () => void;
   loading?: boolean;
   disabled?: boolean;
-  fontSize?: number;
   fw?: number;
   dw?: number;
   w?: string;
-  h?: number;
   placeholder?: string;
   isFilter?: boolean;
   virtual?: boolean;
@@ -40,11 +38,9 @@ const CusSelect: React.FC<CusSelectProps> = memo(
     onOpen = () => {},
     loading = false,
     disabled = false,
-    fontSize = 16,
     fw = 600,
     dw = 0,
     w = '100%',
-    h = 50,
     placeholder = '',
     isFilter = false,
     virtual = false,
@@ -55,28 +51,34 @@ const CusSelect: React.FC<CusSelectProps> = memo(
       <ConfigProvider
         theme={{
           token: {
-            // colorBorder: 'var(--any-grey-30)',
-            // borderRadiusLG: 57,
-            fontSizeLG: fontSize,
-            // colorText: 'var(--any-grey-70)',
-            // colorTextPlaceholder: 'var(--any-grey-40)',
-            // paddingSM: 15,
-            // colorPrimaryHover: undefined,
-            // colorBgContainerDisabled: 'var(--grey-10)',
-            // colorBgContainer: 'var(--grey-00)',
+            // colorBorder: '#d9d9d9',
+            // borderRadius:6,
+            // borderRadiusLG: 8,
+            // borderRadiusSM: 4,
+            // fontSize:14,
+            // fontSizeLG: 16,
+            // fontSizeSM: 12,
+            // colorText: 'rgba(0, 0, 0, 0.88)',
+            // colorTextPlaceholder: 'rgba(0, 0, 0, 0.25)',
+            // paddingSM: 12,
+            // paddingXS: 8,
+            // paddingXXS: 4,
+            // colorPrimaryHover: '#4096ff',
+            // colorBgContainerDisabled: 'rgba(0, 0, 0, 0.04)',
+            // colorBgContainer: '#ffffff',
           },
           components: {
             Select: {
-              // selectorBg: 'var(--grey-20)',
-              // optionFontSize: fontSize,
-              // optionHeight: 40,
-              // optionActiveBg: 'var(--any-grey-10)',
-              // optionPadding: '8px 8px',
-              // optionSelectedBg: 'var(--any-primary-30)',
-              // optionSelectedColor: 'var(--any-grey-70)',
-              optionSelectedFontWeight: fw,
-              singleItemHeightLG: h,
-              // selectorBg: 'var(--any-grey-00)',
+              // selectorBg: '#ffffff',
+              // optionFontSize: 14,
+              // optionHeight: 32,
+              // optionActiveBg: 'rgba(0, 0, 0, 0.04)',
+              // optionPadding: '5px 12px',
+              // optionSelectedBg: '#e6f4ff',
+              // optionSelectedColor: 'rgba(0, 0, 0, 0.88)',
+              // optionSelectedFontWeight: 600,
+              // singleItemHeightLG: 40,
+              // selectorBg: '#ffffff',
             },
           },
         }}
@@ -110,7 +112,7 @@ const CusSelect: React.FC<CusSelectProps> = memo(
                 <Flex vertical justify="center">
                   <span>{option.label}</span>
                 </Flex>
-                {option.data.value === value && <IconCheck />}
+                {/* {option.data.value === value && <IconCheck />} */}
               </Flex>
             );
           }}
@@ -138,8 +140,7 @@ export { CusSelect };
 
 export const cssSelect = (w: string, fw: number) => css`
   width: ${w};
-  .ant-select-selector {
-    /* background: var(--grey-00) !important; */
+  /* .ant-select-selector {
     .ant-select-selection-item {
       font-weight: ${fw};
     }
@@ -153,6 +154,6 @@ export const cssSelect = (w: string, fw: number) => css`
   :is(.ant-select-focused) {
     .ant-select-selector {
       border: 1px solid var(--any-grey-40);
-    }
+    } */
   }
 `;

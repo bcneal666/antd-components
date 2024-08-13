@@ -45,5 +45,5 @@ const cssCusDivider = (
   type: 'horizontal' | 'vertical',
   horizontalMarginBlock: number
 ) => css`
-  ${type === 'horizontal' ? `margin-block: ${horizontalMarginBlock}px 0;` : ''};
+  ${type === 'horizontal' ? `margin: ${horizontalMarginBlock}px 0;` : ''};
 `;
